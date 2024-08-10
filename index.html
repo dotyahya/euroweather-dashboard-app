@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/x-icon" href="./assets/icons/app-favicon.ico">
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="“Pragma”" content="”no-cache”" />
+  <meta http-equiv="“Expires”" content="”-1″" />
+  <meta http-equiv="“CACHE-CONTROL”" content="”NO-CACHE”" />
+
+  <!-- responsive viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+  <!-- CSS Stylesheets ->> overrides bootstrap css -->
+  <link rel="stylesheet" href="css/master.css" />
+
+  <title>EuroWeather</title>
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+      <!-- brand logo -->
+      <div class="navbar navbar-expand-lg navbar-brand-custom">
+        <img src="./assets/icons/app-icon.svg" class="icon" alt="logo" />
+        <a class="navbar-brand navbar-brand-custom" href="#">EuroWeather</a>
+      </div>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#about-modal" href="#">About</a>
+          </li>
+
+          <!-- about modal -->
+          <div class="modal" id="about-modal" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">What is this app about?</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Welcome to EuroWeather! This project demonstrates my proficiency in HTML, CSS, JavaScript, and API
+                    integration and was developed as part of a Coursera-guided project.</p>
+
+                  <h6>Tools and Technologies</h6>
+                  <p>• <strong>HTML & CSS:</strong> For structuring and styling the web pages.<br>
+                    • <strong>JavaScript & jQuery:</strong> For dynamic content updates and interacting with APIs.<br>
+                    • <strong>JSON:</strong> For data exchange between the client and server.<br>
+                    • <strong>7Timer API:</strong> For fetching detailed weather information and forecasts.<br>
+                    • <strong>Postman:</strong> Used for API testing and ensuring smooth integration.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#usage-guide-modal" href="#">Usage Guide</a>
+          </li>
+
+          <!-- usage guide modal -->
+          <div class="modal" id="usage-guide-modal" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">How to use this app?</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Welcome to EuroWeather! This webpage is designed to provide you with up-to-date weather information
+                    for European cities. <br><br> Here's how you can navigate and make the most of this site:</p>
+
+                  <h6>1. Select a City</h6>
+                  <p>Use the "Popular European Cities" dropdown in the navigation bar, the search bar, 
+                    or the body section dropdown to choose a city. Weather details will be shown instantly.</p>
+
+                  <h6>2. Viewing Weather Details</h6>
+                  <p>Once you've selected a city, you will see the current weather conditions, including temperature,
+                    and wind speed <strong>(Limitation of 7Timer API)</strong>. The page will also provide a brief weather forecast for the next 6
+                    days.</p>
+
+                  <h6>3. Refreshing the Data</h6>
+                  <p>If you want to refresh the weather data, simply reload the page or select the city again from the
+                    dropdown menu.</p>
+
+                  <h6>4. Mobile and Desktop Views</h6>
+                  <p>This site is optimized for both desktop and mobile devices, so you can access weather information
+                    on the go. The layout adjusts automatically to provide the best viewing experience on any device.
+                  </p>
+
+                  <h6>5. Contact Me</h6>
+                  <p>If you have any questions, suggestions, or feedback, please feel free to reach out to me.</p>
+
+                  <p>We hope you find EuroWeather useful! Stay informed and plan your day with confidence.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Understood</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Popular European Cities
+            </a>
+            <ul id="popular-city-dropdown" class="dropdown-menu">
+              <li><a class="dropdown-item" href="#" data-lat="48.8566" data-lon="2.3522">Paris, France</a></li>
+              <li><a class="dropdown-item" href="#" data-lat="52.5200" data-lon="13.4050">Berlin, Germany</a></li>
+              <li><a class="dropdown-item" href="#" data-lat="40.4168" data-lon="-3.7038">Madrid, Spain</a></li>
+              <li><a class="dropdown-item" href="#" data-lat="56.1333" data-lon="12.9167">Åstorp, Sweden</a></li>
+              <li><a class="dropdown-item" href="#" data-lat="46.9481" data-lon="7.4474">Bern, Switzerland</a></li>
+
+              <!-- to be implemented -->
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item disabled" href="#" aria-disabled="true">Current Location</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form id="city-search-form" class="d-flex" role="search">
+          <input id="search-city" class="form-control me-2" type="search" placeholder="Paris" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- hero section -->
+  <div class="px-4 py-5 my-3 text-center">
+    <img class="d-block mx-auto" src="./assets/icons/app-icon.svg" alt="" width="100" height="100">
+    <h1 class="display-5 fw-bold text-body-emphasis">Your Handy Weather Companion</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Discover EuroWeather—your go-to app for real-time updates and 7-day forecasts across Europe's
+        top cities. Get instant forecasts and plan your day with ease!</p>
+    </div>
+    <!-- dropdown for city selection -->
+    <div class="dropdown-center">
+      <button class="btn dropdown-toggle btn-custom-color" type="button" id="city-dropdown-menu"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        --- Select a City ---
+      </button>
+      <ul class="dropdown-menu dropdown-menu-custom" id="city-dropdown">
+        <!-- content dynamically added -->
+      </ul>
+    </div>
+  </div>
+
+  <h1 class="display-4 fw-bold text-body-emphasis text-center" id="city-country"></h1>
+
+  <!-- weather card -->
+  <div class="d-flex justify-content-center">
+    <!-- loading spinner -->
+    <div id="loading-spinner" class="spinner-border" role="status" style="display: none;">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <div class="container-fluid text-center">
+    <div id="forecast-cards" class="d-flex flex-wrap justify-content-center">
+      <!-- dynamically updated -->
+    </div>
+  </div>
+</body>
+
+<!-- footer -->
+<footer class="footer d-flex flex-wrap justify-content-center align-items-center py-3 my-4">
+  <div class="col-md-4 d-flex align-items-center justify-content-center">
+    <a href="#" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+      <img src="./assets/icons/app-icon.svg" class="icon" alt="App Icon">
+    </a>
+    <span class="mb-3 mb-md-0 footer-text-custom">Powered by 7Timer API <br> © 2024 EuroWeather</span>
+  </div>
+  <div class="col-md-4 d-flex justify-content-center">
+    <span class="image-credit">
+      Image by <a href="https://pixabay.com/users/dexmac-12233086/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5368444">Gianluca</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5368444">Pixabay</a>
+    </span>
+  </div>
+</footer>
+
+<!-- scripts -->
+<script src="js/main.js"></script>
+<!-- bootstrap CDN -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+  </script>
+
+</html>

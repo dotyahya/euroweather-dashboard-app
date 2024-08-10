@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+body {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  background: transparent;
+  scroll-behavior: smooth;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../assets/images/bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: opacity(40%) contrast(120%); 
+  z-index: -1; 
+}
+
+.icon {
+  width: 2rem;
+}
+
+/* p {
+  margin: 0;
+  padding: 0;
+} */
+
+.navbar-custom {
+  background-color: #f3f3f3ad;
+}
+
+.navbar-brand-custom {
+  font-weight: 500;
+}
+
+.btn-custom-color {
+  background-color: #f3f3f3ad;
+}
+
+.footer-text-custom {
+  color: rgba(0, 0, 0, 0.74);
+  font-weight: 500;
+}
+
+.footer {
+  border-top: 1px solid #f3f3f3ad; 
+}
+
+.image-credit {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.74);
+}
+
+.image-credit a {
+  color: rgba(0, 0, 0, 0.74); 
+  text-decoration: underline;
+}
+
+.image-credit a:hover {
+  text-decoration: underline;
+}
+
+#forecast-cards {
+  padding-top: 10px;
+  padding-bottom: 48px;
+  margin-bottom: 16px;
+  gap: 20px;
+}
+
+.dropdown-menu-custom {
+  max-height: 30vh;
+  overflow-y: auto;
+}
+
+/* weather card ui */
+.weather__card {
+  width: 190px;
+  padding-bottom: 1.8rem;
+  background-color: #f3f3f3ad;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  color:#3C4048;
+}
+
+.weather__card h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color:#3C4048;
+  line-height: 1;
+}
+
+.weather__card h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.weather__card h5 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 0.5;
+  color:#616161;
+}
+
+.weather__card img {
+  width: 120px;
+  height: 120px;
+}
+
+/* weather card ui - status */
+.weather__status img {
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+}
+.weather__status span {
+  font-weight: 500;
+  color: #3C4048;
+  font-size: 1rem;
+  padding-left: .5rem;
+}
