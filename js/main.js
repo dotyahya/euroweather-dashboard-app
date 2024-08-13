@@ -98,6 +98,7 @@ function fetchWeatherData(lon, lat) {
             const weatherCardsHtml = weatherData.map(day => {
                 const weatherImage = getWeatherImage(day.weather);
                 const weatherName = getWeatherName(day.weather);
+                const windSpeed = getWindSpeedDescription(day.wind10m_max);
                 
                 return `
                     <div class="weather__card d-flex flex-column align-items-center">
@@ -115,7 +116,7 @@ function fetchWeatherData(lon, lat) {
                             </div>
                             <div class="weather__status">
                                 <img src="https://svgur.com/i/oKS.svg" alt="Wind Icon">
-                                <span>${day.wind10m_max} km/h</span>
+                                <span>${windSpeed} km/h</span>
                             </div>
                         </div>
                     </div>
@@ -159,6 +160,29 @@ function getWeatherName(weather) {
         case 'oshower': return 'Occassional Showers'; 
         case 'ishower': return 'Isolated Showers'; 
         default: return 'Clear';
+    }
+}
+
+function getWindSpeedDescription(wind10m_max) {
+    switch (wind10m_max) {
+        case 1:
+            return "Below 1.08";
+        case 2:
+            return "1.08-12.24";
+        case 3:
+            return "12.24-28.8";
+        case 4:
+            return "28.8-38.88";
+        case 5:
+            return "38.88-61.92";
+        case 6:
+            return "61.92-88.2";
+        case 7:
+            return "88.2-117.36";
+        case 8:
+            return "Over 117.36";
+        default:
+            return "Unknown wind speed";
     }
 }
 
